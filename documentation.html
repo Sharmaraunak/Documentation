@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="doc.css">
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+    <title>python docs</title>
+
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>
+        Python Docs
+      </header>
+      <ul>
+        <a href="#Introduction" rel="internal" class="nav-link"><li>Introduction</li></a>
+        <a href="#Requirements" rel="internal"  class="nav-link"><li>Requirements</li></a>
+        <a href="#Running_In_Terminal" rel="internal"  class="nav-link"><li>Running in terminal</li></a>
+        <a href="#Input_output" rel="internal"  class="nav-link"><li>Input Output</li></a>
+        <a href="#FirstProgram" rel="internal"  class="nav-link"><li>FirstProgram</li></a>
+        <a href="#Variables" rel="internal"  class="nav-link"><li>Variables</li></a>
+        <a href="#Globalvariables" rel="internal"  class="nav-link"><li>Globalvariables</li></a>
+        <a href="#Datatypes" rel="internal"  class="nav-link"><li>Datatypes</li></a>
+        <a href="#Conditionals" rel="internal"  class="nav-link"><li>Conditionals</li></a>
+        <a href="#ControlFlow" rel="internal"  class="nav-link"><li>ControlFlow</li></a>
+        <a href="#Functions" rel="internal"  class="nav-link"><li>Functions</li></a>
+        <a href="#Libraries" rel="internal"  class="nav-link"><li>Libraries</li></a>
+        <a href="#Data_Structures" rel="internal"  class="nav-link"><li>Data structures</li></a>
+        <a href="#Classes" rel="internal"  class="nav-link"><li>Classes</li></a>
+        <a href="#What_Now" rel="internal"  class="nav-link"><li>What Now</li></a>
+        <a href="#Appendix" rel="internal"  class="nav-link"><li>Appendix</li></a>
+        <a href="#References" rel="internal"  class="nav-link"><li>References</li></a>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+          <p>Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.</p>
+          <p>The Python interpreter is easily extended with new functions and data types implemented in C or C++ (or other languages callable from C). Python is also suitable as an extension language for customizable applications.</p>
+          <p>Python enables programs to be written compactly and readably. Programs written in Python are typically much shorter than equivalent C, C++, or Java programs, for several reasons:</p>
+          <li>the high-level data types allow you to express complex operations in a single statement.</li>
+          <li>no variable or argument declarations are necessary.</li>
+          <li>statement grouping is done by indentation instead of beginning and ending brackets.</li>
+          <li>async and await are now reserved keywords.</li>
+          <li>annotations could only use names which were already available in the current scope, in other words they didn’t support forward references of any kind.</li>
+        </article>
+      </section>
+      <section class="main-section" id="Requirements">
+        <header>Requirements</header>
+        <article>
+          <p>As a popular open source development project, Python has an active supporting community of contributors and users that also make their software available for other Python developers to use under open source license terms.</p>
+          <p>This allows Python users to share and collaborate effectively, benefiting from the solutions others have already created to common (and sometimes even rare!) problems, as well as potentially contributing their own solutions to the common pool.</p>
+          <p>The following command will install the latest version of a module and its dependencies from the Python Packaging Index:</p>
+            <code>python -m pip install SomePackage</code>
+        </article>
+      </section>
+      <section class="main-section" id="Running_In_Terminal">
+        <header>Running In Terminal</header>
+        <article>
+          <p>The Python interpreter is usually installed as /usr/local/bin/python on those machines where it is available; putting /usr/local/bin in your Unix shell’s search path makes it possible to start it by typing the command</p>
+            <code>python</code>
+            <p>On Windows machines, the Python installation is usually placed in C:\Python27, though you can change this when you’re running the installer. To add this directory to your path, you can type the following command into the command prompt in a DOS box:</p>
+            <code>set path=%path%;C:\python27</code>
+            <p>When commands are read from a tty, the interpreter is said to be in interactive mode. In this mode it prompts for the next command with the primary prompt, usually three greater-than signs (>>>); for continuation lines it prompts with the secondary prompt, by default three dots (...). The interpreter prints a welcome message stating its version number and a copyright notice before printing the first prompt:</p>
+            <code>python
+Python 2.7 (#1, Feb 28 2010, 00:02:06)
+Type "help", "copyright", "credits" or "license" for more information.
+>>></code>
+            <p>Continuation lines are needed when entering a multi-line construct. As an example, take a look at this if statement:</p>
+            <code>>>> the_world_is_flat = 1
+>>> if the_world_is_flat:
+...     print "Be careful not to fall off!"
+...
+Be careful not to fall off!</code>
+        </article>
+      </section>
+      <section class="main-section" id="Input_output">
+        <header>Input Output</header>
+        <article>
+          <p>So far we’ve encountered two ways of writing values: expression statements and the print statement. (A third way is using the write() method of file objects; the standard output file can be referenced as sys.stdout. See the Library Reference for more information on this.)</p>
+          <p>Often you’ll want more control over the formatting of your output than simply printing space-separated values. There are two ways to format your output; the first way is to do all the string handling yourself; using string slicing and concatenation operations you can create any layout you can imagine. The string types have some methods that perform useful operations for padding strings to a given column width; these will be discussed shortly. The second way is to use the str.format() method.</p>
+          <p>Some examples:</p>
+          <code>>>> s = 'Hello, world.'
+>>> str(s)
+'Hello, world.'
+>>> repr(s)
+"'Hello, world.'"
+>>> str(1.0/7.0)
+'0.142857142857'
+>>> repr(1.0/7.0)
+'0.14285714285714285'
+>>> x = 10 * 3.25
+>>> y = 200 * 200
+>>> s = 'The value of x is ' + repr(x) + ', and y is ' + repr(y) + '...'
+>>> print s
+The value of x is 32.5, and y is 40000...
+>>> # The repr() of a string adds string quotes and backslashes:
+... hello = 'hello, world\n'
+>>> hellos = repr(hello)
+>>> print hellos
+'hello, world\n'
+>>> # The argument to repr() may be any Python object:
+... repr((x, y, ('spam', 'eggs')))
+"(32.5, 40000, ('spam', 'eggs'))</code>
+        </article>
+      </section>
+      <section class="main-section" id="FirstProgram">
+        <header>FirstProgram</header>
+        <article>
+          <p>To write the “Hello, World!” program, let’s open up a command-line text editor such as nano and create a new file:</p>
+          <code>nano hello.py</code>
+          <p>Once the text file opens up in the terminal window we’ll type out our program:</p>
+          <code>print("Hello, World!")</code>
+          <p>With our “Hello, World!” program written, we are ready to run the program. We’ll use the python3 command along with the name of our program file. Let’s run the program:</p>
+          <code>python3 hello.py</code>
+          <code>Output
+Hello, World!</code>
+        </article>
+      </section>
+      <section class="main-section" id="Variables">
+        <header>Variables</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+        </article>
+      </section>
+      <section class="main-section" id="Globalvariables">
+        <header>Globalvariables</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+      </section>
+      <section class="main-section" id="Datatypes">
+        <header>Datatypes</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+      </section>
+      <section class="main-section" id="Conditionals">
+        <header>Conditionals</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+      </section>
+      <section class="main-section" id="ControlFlow">
+        <header>ControlFlow</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+      </section>
+      <section class="main-section" id="Functions">
+        <header>Functions</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+      </section>
+      <section class="main-section" id="Libraries">
+        <header>Libraries</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+      </section>
+      <section class="main-section" id="Data_Structures">
+        <header>Data Structures</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+      </section>
+      <section class="main-section" id="Classes">
+        <header>Classes</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+      </section>
+      <section class="main-section" id="What_Now">
+        <header>What Now</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+      </section>
+      <section class="main-section" id="Appendix">
+        <header>Appendix</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+      </section>
+      <section class="main-section" id="References">
+        <header>References</header>
+        <article >
+          <p>Unlike other programming languages, Python has no command for declaring a variable.
+
+  A variable is created the moment you first assign a value to it.</p>
+          <code>x = 5
+  y = "John"
+  print(x)
+  print(y)</code>
+      </section>
+    </main>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
